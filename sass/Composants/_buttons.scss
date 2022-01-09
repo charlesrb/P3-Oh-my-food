@@ -12,5 +12,12 @@
 
 .btn-new {
     position:absolute;
-    right:0px;  
+    right:15px; 
+    top:15px; 
+    background:$colour-tertiary;
+    border:none;
+    border-radius:2px;
+    color:darken($colour-tertiary,40);
+    font-size:16px;    
+    padding:5px;
 }

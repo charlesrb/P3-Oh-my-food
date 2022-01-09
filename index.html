@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,29 +15,31 @@
 </head>
 <body>
     <header>
-        <div id="logo"><img src="/public/img/logo/ohmyfood.png" alt="logo ohmyfood"></div>
-        <div id="location"><p>Paris, Belleville</p></div>
+        <div id="logo"><h1>ohmyfood</h1></div>
+    </header>
+    <main>
+        <div id="location">
+            
+            <p><i class="fas fa-map-marker-alt"></i>Paris, Belleville</p></div>
         <div id="explore">
-            <h1>Réservez le menu qui vous convient</h1>
+            <h2>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
             <button class="btn">Explorer nos restaurants</button>
         </div>
-    </header>
-    <main>
         <section id="fonctionality">
             <div><h2>Fonctionnement</h2></div>
-            <div class="choose">
-                <button class="choose__btn">
+            <ul class="choose">
+                <li class="choose__btn">
                     <span>1</span><i class="fas fa-mobile-alt"></i>Choisissez un restaurant
-                </button>
-                <button class="choose__btn">
+                </li>
+                <li class="choose__btn">
                     <span>2</span><i class="fas fa-list-ul"></i>Composez votre menu
-                </button>
-                <button class="choose__btn">
+                </li>
+                <li class="choose__btn">
                     <span>3</span><i class="fas fa-store"></i>Dégustez au restaurant
-                </button>
+                </li>
                 
-            </div>
+            </ul>
         </section>
         <section id="restaurants">
             <div><h2>Restaurants</h2></div>
@@ -64,8 +66,8 @@
                         <button class="btn-new">Nouveau</button>
                         <div class="restaurant__list--legend">
                             <div>
-                                <h3>La palette du goût</h3>
-                                <p>Ménilmontant</p>
+                                <h3>La note enchantée</h3>
+                                <p>Charonne</p>
                             </div>
                             <div>
                                 <i class="far fa-heart"></i>
@@ -80,8 +82,8 @@
                         <button class="btn-new">Nouveau</button>
                         <div class="restaurant__list--legend">
                             <div>
-                                <h3>La palette du goût</h3>
-                                <p>Ménilmontant</p>
+                                <h3>A la française</h3>
+                                <p>Cité Rouge</p>
                             </div>
                             <div>
                                 <i class="far fa-heart"></i>
@@ -96,11 +98,11 @@
                         <button class="btn-new">Nouveau</button>
                         <div class="restaurant__list--legend">
                             <div>
-                                <h3>La palette du goût</h3>
-                                <p>Ménilmontant</p>
+                                <h3>Le délice des sens</h3>
+                                <p>Folie-Méricourt</p>
                             </div>
                             <div>
-                                <p>Coeur</p>
+                                <i class="far fa-heart"></i>
                             </div>
                         </div>
                     </article>
@@ -110,10 +112,10 @@
     </main>
 
     <footer>
-        <div id="logo"><img src="/public/img/logo/ohmyfood.png" alt="logo ohmyfood"></div>
+        <div id="footer__logo">ohmyfood</div>
         <ul>
-            <li>Proposer un restaurant</li>
-            <li>Devenir partenaire</li>
+            <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+            <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
             <li>Mentions légales</li>
             <li>Contact</li>
         </ul>
