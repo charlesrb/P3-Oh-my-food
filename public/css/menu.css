@@ -1,0 +1,170 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 24px;
+  font-weight: 700px;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  box-shadow: 0px 0px 5px #c6c6c6;
+  border-radius: 25px;
+  width: 220px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.btn-new {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: #99E2D0;
+  border: none;
+  border-radius: 2px;
+  color: #278870;
+  font-size: 16px;
+  padding: 5px;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+}
+footer #footer__logo {
+  font-family: "Shrikhand", sans-serif;
+  color: white;
+  font-size: 18px;
+}
+footer ul {
+  font-size: 16px;
+  list-style-type: none;
+}
+footer ul i {
+  margin-right: 10px;
+}
+
+#logo__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#logo__page a {
+  position: absolute;
+  left: 15px;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+.img__header {
+  object-fit: cover;
+  width: 100%;
+}
+
+#title__restaurant {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#page {
+  background: #f6f6f6;
+  border-radius: 25px 25px 0 0;
+  height: 100%;
+  margin-top: -50px;
+  padding-top: 25px;
+  position: relative;
+  z-index: 1;
+}
+#page h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px;
+  position: relative;
+}
+#page h3::after {
+  content: "";
+  position: absolute;
+  background: #99E2D0;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+}
+
+.list-menu__details {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px 20px 10px 10px;
+  box-shadow: 0px 0px 5px #c6c6c6;
+  margin: auto;
+  width: 95%;
+}
+.list-menu__details h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.list-menu__details p {
+  font-size: 15px;
+  font-weight: 400;
+}
+.list-menu__details div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn__page {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/*# sourceMappingURL=menu.css.map */
