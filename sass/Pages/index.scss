@@ -52,8 +52,14 @@ header {
         padding:0 10px 0 10px;
         margin-bottom:30px;
     }
-    button {
+    .btn {
         margin:auto;
+        cursor:pointer;
+        transition:scale 200ms ease-in-out;
+        &:hover {
+            transform:scale(1.05);
+            box-shadow:5px 5px 10px #c6c6c6;
+        }
     }
 }
 
@@ -73,9 +79,7 @@ header {
         align-items: center;
         margin-top:30px;
         list-style-type:circle;
-        .active-btn {
-            background-color: #F5EDFF;
-        }
+        
         &__btn {
             display: flex;
             flex-direction: row;
@@ -104,9 +108,17 @@ header {
                 padding-left:20px;
                 font-size: 18px;
                 }
-            .active {
-                color:$colour-primary;
+            &:hover {
+                background-color: #F5EDFF;
+                cursor:pointer;
+                .fas {
+                    color:$colour-primary;
+
+                }
             }
+            
+            
+            
             }
         
         }
@@ -125,6 +137,14 @@ header {
             align-items: center;
             margin:auto;
             gap:20px;
+            &--link {
+                cursor:pointer;
+                transition:scale 500ms ease-in-out;
+                &:hover {
+                    transform:scale(1.02);
+                }
+            
+            }
             &--card {
                 width:335px;
                 border:none;
@@ -164,11 +184,76 @@ header {
                     font-size:18px;
                     line-height: 1em;
                 }
-                i {
-                    margin-right:15px;
-                    font-weight: 400;
-                    font-size:24px;
+                .fa-stack {
+                    font-size:25px;
+                    transition:opacity 1s ease-in-out;
+
+                    .fas {
+                        opacity:0;
+                        background: linear-gradient($colour-primary, $colour-secondary);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                    }
+                    &:hover {
+                        .far {
+                            opacity:0;
+                        }
+                        .fas {
+                            opacity:1;
+                        }
+                    }
                 }
+
+
+                /*
+                .heart {
+                    
+                    & :nth-child(1) {
+                        bottom: 1em;
+                        color: black;
+                        cursor: pointer;
+                        font-size: 25px;
+                        position: absolute;
+                        right: 1em;
+                        transition: all 1s ease-in-out;
+                        z-index:2;
+
+                        &:hover {
+                            opacity:0;
+                        }
+                    }
+                    & :nth-child(2) {
+                        bottom: 1em;
+                        color: black;
+                        cursor: pointer;
+                        font-size: 25px;
+                        position: absolute;
+                        right: 1em;
+                        transition: all 1s ease-in-out;
+                        opacity:0;
+                        position:absolute;
+                        z-index:3;
+                        &:hover {
+                            background: linear-gradient($colour-primary, $colour-secondary);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            transform:translate(120px, 50%);
+                            opacity:1;
+                            color: white;
+                            font-weight: 600;
+                            animation: fillheart 0.3s linear forwards;
+                            
+
+
+                        }
+                    }
+                    
+                }
+                
+        
+
+                */
+                
             }
     
         }
