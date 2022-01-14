@@ -30,13 +30,13 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:95%;
-    margin:auto;
+    width: 95%;
+    margin: auto;
     .fa-stack {
         font-size: 30px;
-        padding:0;
-        width:40px;
-        cursor:pointer;
+        padding: 0;
+        width: 40px;
+        cursor: pointer;
         .fas {
             opacity: 0;
             background: linear-gradient($colour-primary, $colour-secondary);

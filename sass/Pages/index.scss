@@ -5,6 +5,60 @@
 @import "../Composants/buttons";
 @import "../Layout/footer";
 
+.loader {
+    height: 100vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 2;
+    animation: loader 3s;
+    animation-delay: 5000ms;
+    animation-fill-mode: both;
+    transform-origin: bottom;
+    div {
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                animation-delay: 200ms * $i + random(100) * 15ms;
+            }
+        }
+    }
+    &__one {
+        background-color: $colour-primary;
+        width: 20%;
+        animation: bars 1s backwards infinite alternate ease-in-out;
+    }
+    &__two {
+        background-color: $colour-secondary;
+        width: 20%;
+        animation: bars 1s backwards infinite alternate ease-in-out;
+    }
+    &__three {
+        background-color: $colour-tertiary;
+        width: 20%;
+        animation: bars 1s backwards infinite alternate ease-in-out;
+    }
+    @keyframes bars {
+        0% {
+            transform: scaleY(1);
+        }
+        100% {
+            transform: scaleY(0.5);
+        }
+    }
+    @keyframes loader {
+        0% {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scaleY(0);
+            opacity: 0;
+        }
+    }
+}
+
 header {
     @include flex;
     flex-direction: column;
@@ -128,7 +182,7 @@ header {
         gap: 20px;
         &--link {
             cursor: pointer;
-            transition: scale 500ms ease-in-out;
+            transition: scale 1000ms ease-in;
             &:hover {
                 transform: scale(1.02);
             }
@@ -177,14 +231,14 @@ header {
                     background: linear-gradient($colour-primary, $colour-secondary);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    transition: all 0.5s ease-in-out;
                 }
                 &:hover {
                     .fas {
                         opacity: 1;
                         /*transform:scale(1.1);
-                            transform-origin:bottom;*/
-                        animation: scale-up-bottom 0.4s ease-in-out both;
+                        transform-origin:bottom;*/
+                        animation: scale-up-bottom 0.4s ease-in-out;
+                        animation-fill-mode: both;
                     }
                     .far {
                         opacity: 0;

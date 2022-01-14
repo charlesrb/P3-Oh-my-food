@@ -88,6 +88,68 @@ footer ul i {
   color: #9356DC;
 }
 
+.loader {
+  height: 100vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 2;
+  animation: loader 3s;
+  animation-delay: 5000ms;
+  animation-fill-mode: both;
+  transform-origin: bottom;
+}
+.loader div:nth-child(1) {
+  animation-delay: 560ms;
+}
+.loader div:nth-child(2) {
+  animation-delay: 1075ms;
+}
+.loader div:nth-child(3) {
+  animation-delay: 1995ms;
+}
+.loader div:nth-child(4) {
+  animation-delay: 2225ms;
+}
+.loader div:nth-child(5) {
+  animation-delay: 1705ms;
+}
+.loader__one {
+  background-color: #9356DC;
+  width: 20%;
+  animation: bars 1s backwards infinite alternate ease-in-out;
+}
+.loader__two {
+  background-color: #FF79DA;
+  width: 20%;
+  animation: bars 1s backwards infinite alternate ease-in-out;
+}
+.loader__three {
+  background-color: #99E2D0;
+  width: 20%;
+  animation: bars 1s backwards infinite alternate ease-in-out;
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -107,7 +169,7 @@ header #logo {
 }
 
 #location {
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -172,7 +234,7 @@ header #logo {
   flex-direction: row;
   align-items: center;
   font-size: 16px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   width: 325px;
   border-radius: 20px;
   box-shadow: 0px 0px 5px #c6c6c6;
@@ -191,13 +253,13 @@ header #logo {
   left: -12px;
 }
 #fonctionality .choose__btn .fas {
-  color: #7E7E7E;
+  color: #7e7e7e;
   padding-right: 20px;
   padding-left: 20px;
   font-size: 18px;
 }
 #fonctionality .choose__btn:hover {
-  background-color: #F5EDFF;
+  background-color: #f5edff;
   cursor: pointer;
 }
 #fonctionality .choose__btn:hover .fas {
@@ -205,7 +267,7 @@ header #logo {
 }
 
 #restaurants {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding-bottom: 60px;
 }
 #restaurants h2 {
@@ -222,7 +284,7 @@ header #logo {
 }
 #restaurants .restaurant__list--link {
   cursor: pointer;
-  transition: scale 500ms ease-in-out;
+  transition: scale 1000ms ease-in;
 }
 #restaurants .restaurant__list--link:hover {
   transform: scale(1.02);
@@ -231,7 +293,7 @@ header #logo {
   width: 335px;
   border: none;
   border-radius: 25px;
-  box-shadow: 5px 5px 5px 0px #E2E2E2;
+  box-shadow: 5px 5px 5px 0px #e2e2e2;
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -273,13 +335,13 @@ header #logo {
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.5s ease-in-out;
 }
 #restaurants .restaurant__list--legend .fa-stack:hover .fas {
   opacity: 1;
   /*transform:scale(1.1);
   transform-origin:bottom;*/
-  animation: scale-up-bottom 0.4s ease-in-out both;
+  animation: scale-up-bottom 0.4s ease-in-out;
+  animation-fill-mode: both;
 }
 #restaurants .restaurant__list--legend .fa-stack:hover .far {
   opacity: 0;

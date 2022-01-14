@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,21 +14,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Oh my food !</title>
 </head>
+
 <body>
+    <div class="loader">
+        <div class="loader__one"></div>
+        <div class="loader__two"></div>
+        <div class="loader__three"></div>
+        <div class="loader__two"></div>
+        <div class="loader__one"></div>
+    </div>
     <header>
-        <div id="logo"><h1>ohmyfood</h1></div>
+        <div id="logo">
+            <h1>ohmyfood</h1>
+        </div>
     </header>
     <main>
         <div id="location">
-            
-            <p><i class="fas fa-map-marker-alt"></i>Paris, Belleville</p></div>
+
+            <p><i class="fas fa-map-marker-alt"></i>Paris, Belleville</p>
+        </div>
         <div id="explore">
-            <h2>Réservez le menu qui vous convient</h1>
+            <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
             <button class="btn">Explorer nos restaurants</button>
         </div>
         <section id="fonctionality">
-            <div><h2>Fonctionnement</h2></div>
+            <div>
+                <h2>Fonctionnement</h2>
+            </div>
             <ul class="choose">
                 <li class="choose__btn">
                     <span>1</span><i class="fas fa-mobile-alt"></i>Choisissez un restaurant
@@ -38,11 +52,13 @@
                 <li class="choose__btn active-btn">
                     <span>3</span><i class="fas fa-store active"></i>Dégustez au restaurant
                 </li>
-                
+
             </ul>
         </section>
         <section id="restaurants">
-            <div><h2>Restaurants</h2></div>
+            <div>
+                <h2>Restaurants</h2>
+            </div>
             <div class="restaurant__list">
                 <a href="./Pages-menu/la-palette-du-gout.html" class="restaurant__list--link">
                     <article class="restaurant__list--card">
@@ -123,4 +139,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
