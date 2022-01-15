@@ -1,3 +1,130 @@
+/* 
+==========================
+        COLORS 
+==========================
+*/
+/* 
+==========================
+        BOX-SHADOW 
+==========================
+*/
+/* 
+==========================
+        BREAKPOINTS 
+==========================
+*/
+/* 
+===================
+     LOADER
+===================
+*/
+@-webkit-keyframes bars {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+/* 
+===================
+    HEART APPEAR
+===================
+*/
+@-webkit-keyframes scale-up-bottom {
+  0% {
+    transform: scale(0.1);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+}
+@keyframes scale-up-bottom {
+  0% {
+    transform: scale(0.1);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+}
+/* 
+===================
+    BUTTON CHECK
+===================
+*/
+@-webkit-keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 
+===================
+    MENU APPEAR
+===================
+*/
+@-webkit-keyframes appear {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 *,
 *::after,
 *::before {
@@ -16,12 +143,22 @@ body {
 h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 24px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", sans-serif;
   font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 17px;
   font-weight: 700;
 }
 
@@ -46,7 +183,9 @@ a {
   font-size: 16px;
   font-weight: 700;
   color: white;
+  margin: auto;
   cursor: pointer;
+  transition: scale 200ms ease-in-out;
 }
 .btn:hover {
   transform: scale(1.05);
@@ -58,12 +197,12 @@ a {
   position: absolute;
   right: 15px;
   top: 15px;
-  background: #99E2D0;
+  background: #99e2d0;
   border: none;
   border-radius: 2px;
   color: #278870;
   font-size: 16px;
-  padding: 5px;
+  padding: 0px 5px 0px 5px;
 }
 
 footer {
@@ -85,9 +224,14 @@ footer ul i {
 }
 
 .footer__link:hover {
-  color: #9356DC;
+  color: #9356dc;
 }
 
+/* 
+==========================
+        LOADER 
+==========================
+*/
 .loader {
   height: 100vh;
   width: 100%;
@@ -96,58 +240,51 @@ footer ul i {
   flex-direction: row;
   position: fixed;
   z-index: 2;
+  -webkit-animation: loader 3s;
   animation: loader 3s;
+  -webkit-animation-delay: 5000ms;
   animation-delay: 5000ms;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   transform-origin: bottom;
 }
 .loader div:nth-child(1) {
-  animation-delay: 560ms;
+  -webkit-animation-delay: 1430ms;
+  animation-delay: 290ms;
 }
 .loader div:nth-child(2) {
-  animation-delay: 1075ms;
+  -webkit-animation-delay: 880ms;
+  animation-delay: 1555ms;
 }
 .loader div:nth-child(3) {
-  animation-delay: 1995ms;
+  -webkit-animation-delay: 1905ms;
+  animation-delay: 1455ms;
 }
 .loader div:nth-child(4) {
-  animation-delay: 2225ms;
+  -webkit-animation-delay: 1970ms;
+  animation-delay: 1670ms;
 }
 .loader div:nth-child(5) {
-  animation-delay: 1705ms;
+  -webkit-animation-delay: 2470ms;
+  animation-delay: 1555ms;
 }
 .loader__one {
-  background-color: #9356DC;
+  background-color: #9356dc;
   width: 20%;
+  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
   animation: bars 1s backwards infinite alternate ease-in-out;
 }
 .loader__two {
-  background-color: #FF79DA;
+  background-color: #ff79da;
   width: 20%;
+  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
   animation: bars 1s backwards infinite alternate ease-in-out;
 }
 .loader__three {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   width: 20%;
+  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
   animation: bars 1s backwards infinite alternate ease-in-out;
-}
-@keyframes bars {
-  0% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(0.5);
-  }
-}
-@keyframes loader {
-  0% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(0);
-    opacity: 0;
-  }
 }
 
 header {
@@ -176,7 +313,6 @@ header #logo {
   align-content: center;
 }
 #location p {
-  font-size: 16px;
   color: #353535;
   margin: auto;
   text-align: center;
@@ -188,15 +324,16 @@ header #logo {
 #explore {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
   margin: auto;
   background-color: #f6f6f6;
-  height: 287px;
+  height: 100%;
   padding-top: 40px;
   padding-bottom: 60px;
 }
 #explore h2 {
+  font-family: "Roboto", sans-serif;
   text-align: center;
   line-height: 1em;
   padding: 0 50px 0 50px;
@@ -206,26 +343,22 @@ header #logo {
   padding: 0 10px 0 10px;
   margin-bottom: 30px;
 }
-#explore .btn {
-  margin: auto;
-  cursor: pointer;
-  transition: scale 200ms ease-in-out;
-}
 
 #fonctionality {
-  height: 440px;
+  height: 100%;
   padding-top: 50px;
   padding-bottom: 70px;
 }
 #fonctionality h2 {
   padding-left: 15px;
+  font-family: "Roboto", sans-serif;
 }
 #fonctionality .choose {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
   margin-top: 30px;
   list-style-type: circle;
 }
@@ -235,7 +368,8 @@ header #logo {
   align-items: center;
   font-size: 16px;
   background-color: #f6f6f6;
-  width: 325px;
+  width: 90%;
+  margin: auto;
   border-radius: 20px;
   box-shadow: 0px 0px 5px #c6c6c6;
   border: none;
@@ -244,7 +378,7 @@ header #logo {
 }
 #fonctionality .choose__btn span {
   color: white;
-  background: #9356DC;
+  background: #9356dc;
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -263,7 +397,7 @@ header #logo {
   cursor: pointer;
 }
 #fonctionality .choose__btn:hover .fas {
-  color: #9356DC;
+  color: #9356dc;
 }
 
 #restaurants {
@@ -272,13 +406,14 @@ header #logo {
 }
 #restaurants h2 {
   padding: 40px 0px 10px 20px;
+  font-family: "Roboto", sans-serif;
 }
 #restaurants .restaurant__list {
   width: 90%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: auto;
   gap: 20px;
 }
@@ -293,17 +428,24 @@ header #logo {
   width: 335px;
   border: none;
   border-radius: 25px;
-  box-shadow: 5px 5px 5px 0px #e2e2e2;
+  box-shadow: 0px 0px 5px #c6c6c6;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   background-color: #fff;
   position: relative;
 }
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  #restaurants .restaurant__list--card {
+    width: 300px;
+  }
+}
 #restaurants .restaurant__list--card img {
   width: 100%;
   height: 175px;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
   border-radius: 25px 25px 0 0;
 }
@@ -332,33 +474,74 @@ header #logo {
 }
 #restaurants .restaurant__list--legend .fa-stack .fas {
   opacity: 0;
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #restaurants .restaurant__list--legend .fa-stack:hover .fas {
   opacity: 1;
-  /*transform:scale(1.1);
-  transform-origin:bottom;*/
+  -webkit-animation: scale-up-bottom 0.4s ease-in-out;
   animation: scale-up-bottom 0.4s ease-in-out;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 #restaurants .restaurant__list--legend .fa-stack:hover .far {
   opacity: 0;
 }
-@keyframes scale-up-bottom {
-  0% {
-    -webkit-transform: scale(0.1);
-    transform: scale(0.1);
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
+
+/* 
+===================
+DESKTOP RESPONSIVE
+===================
+*/
+@media screen and (min-width: 1024px) {
+  #explore {
+    height: 100%;
   }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
+
+  #restaurants .restaurant__list {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+  }
+  #restaurants .restaurant__list--card {
+    width: 450px;
+  }
+
+  #fonctionality {
+    height: 100%;
+  }
+  #fonctionality .choose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    list-style-type: circle;
+    width: 90%;
   }
 }
-
-/*# sourceMappingURL=index.css.map */
+/* 
+===================
+TABLET RESPONSIVE
+===================
+*/
+@media screen and (min-width: 376px) and (max-width: 1023px) {
+  #restaurants .restaurant__list {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+  #restaurants .restaurant__list--card {
+    width: 335px;
+  }
+}

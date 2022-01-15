@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass  --watch ./sass/Pages/index.scss:./public/css/index.css --style expanded",
-    "sass": "sass --watch ./sass/Pages/menu.scss:./public/css/menu.css --style expanded"
-    },
+    "sass": "sass --watch ./sass/Pages/menu.scss:./public/css/menu.css --style expanded",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli-simple": "^3.1.0"
+  }
 }

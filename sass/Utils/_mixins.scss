@@ -4,6 +4,13 @@
     align-content: center;
 }
 
-@mixin button {
-   
+@mixin flex_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -1,14 +1,19 @@
 @import "../Utils/variables";
 @import "../Utils/mixins";
+@import "../Utils/animations";
 @import "../Base/base";
 @import "../Base/typography";
 @import "../Composants/buttons";
 @import "../Layout/footer";
 
+/* 
+==========================
+      MOBILE FIRST 
+==========================
+*/
+
 #logo__page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_items;
     position: relative;
     a {
         position: absolute;
@@ -17,19 +22,16 @@
     }
 }
 
-h2 {
-    font-family: "Shrikhand", sans-serif;
-}
-
 .img__header {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
 }
 
 #title__restaurant {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: center;
     width: 95%;
     margin: auto;
     .fa-stack {
@@ -40,34 +42,20 @@ h2 {
         .fas {
             opacity: 0;
             background: linear-gradient($colour-primary, $colour-secondary);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         &:hover {
             .fas {
                 opacity: 1;
-                /*transform:scale(1.1);
-                transform-origin:bottom;*/
-                animation: scale-up-bottom 0.4s ease-in-out;
-                animation-fill-mode: both;
+                -webkit-animation: scale-up-bottom 0.4s ease-in-out;
+                        animation: scale-up-bottom 0.4s ease-in-out;
+                -webkit-animation-fill-mode: both;
+                        animation-fill-mode: both;
             }
             .far {
                 opacity: 0;
-            }
-        }
-
-        @keyframes scale-up-bottom {
-            0% {
-                -webkit-transform: scale(0.1);
-                transform: scale(0.1);
-                -webkit-transform-origin: 50% 100%;
-                transform-origin: 50% 100%;
-            }
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                -webkit-transform-origin: 50% 100%;
-                transform-origin: 50% 100%;
             }
         }
     }
@@ -79,18 +67,21 @@ h2 {
     gap: 10px;
 
     a {
-        animation: ease-in-out appear 1s;
-        animation-fill-mode: both;
+        -webkit-animation: ease-in-out appear 1s;
+                animation: ease-in-out appear 1s;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
         @for $i from 2 through 5 {
             &:nth-child(#{$i}) {
-                animation-delay: 500ms * ($i/2);
+                -webkit-animation-delay: 500ms * calc($i / 2);
+                        animation-delay: 500ms * calc($i / 2);
             }
         }
     }
 }
 
 #page {
-    background: #f6f6f6;
+    background: $colour-bg;
     border-radius: 25px 25px 0 0;
     height: 100%;
     margin-top: -50px;
@@ -99,8 +90,6 @@ h2 {
     z-index: 1;
     h3 {
         text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 400;
         margin: 20px;
         position: relative;
         &::after {
@@ -124,28 +113,23 @@ h2 {
     flex-direction: row;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px #c6c6c6;
-    margin: auto;
-    width: 95%;
+    box-shadow: $box-shadow;
     transition: translate 500ms ease-in-out;
-
+    overflow: hidden;
+    margin: auto;
     &__description {
         display: flex;
         flex-direction: column;
         padding: 10px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+
         p {
             font-size: 14px;
-            font-weight: 400;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
+            @include overflow;
+            width: 200px;
         }
         h4 {
-            font-size: 17px;
-            font-weight: 700;
+            @include overflow;
+            width: 210px;
         }
     }
     &__price {
@@ -159,67 +143,54 @@ h2 {
     &__check {
         background: $colour-tertiary;
         color: white;
-        width: 50px;
+        font-size: 20px;
+        width: 70px;
         border-radius: 0 15px 15px 0;
-        margin-right: -70px;
-        display: none;
+        margin-right: -75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     &:hover {
         .details__check {
-            display: block;
-            background: $colour-tertiary;
+            margin-right: 0;
             width: 70px;
-            border-radius: 0 15px 15px 0;
-            font-size: 20px;
-            margin-right: 0px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        h4 {
-            width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        p {
-            width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+
         .fas {
-            animation: rotate-center 0.6s ease-in-out both;
+            -webkit-animation: rotate-center 0.6s ease-in-out both;
+                    animation: rotate-center 0.6s ease-in-out both;
         }
     }
 }
 
-@keyframes rotate-center {
-    0% {
-        -webkit-transform: rotate(0);
-        transform: rotate(0);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes appear {
-    0% {
-        -webkit-transform: translateY(50px);
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 .btn__page {
-    display: flex;
-    justify-content: center;
+    @include flex;
     padding: 40px;
     transition: scale 200ms ease-in-out;
+}
+
+/* 
+==========================
+    RESPONSIVE DESKTOP 
+==========================
+*/
+
+@media screen and (min-width: $desktop-min-w) and (max-width: $desktop-max-w) {
+    .img__header {
+        -o-object-fit: cover;
+           object-fit: cover;
+        width: 100%;
+        height: 300px;
+    }
+    #page {
+        max-width: 1200px;
+        margin: auto;
+        margin-top: -50px;
+    }
+    #menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }

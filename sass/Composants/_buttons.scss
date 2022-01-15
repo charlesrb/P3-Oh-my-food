@@ -8,7 +8,9 @@
     font-size: 16px;
     font-weight: 700;
     color: white;
+    margin:auto;
     cursor: pointer;
+    transition: scale 200ms ease-in-out;
     &:hover {
         transform: scale(1.05);
         box-shadow: 5px 5px 10px #c6c6c6;
@@ -16,15 +18,14 @@
     }
 }
 
-
 .btn-new {
-    position:absolute;
-    right:15px; 
-    top:15px; 
-    background:$colour-tertiary;
-    border:none;
-    border-radius:2px;
-    color:darken($colour-tertiary,40);
-    font-size:16px;    
-    padding:5px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: $colour-tertiary;
+    border: none;
+    border-radius: 2px;
+    color: darken($colour-tertiary, 40);
+    font-size: 16px;
+    padding:0px 5px 0px 5px;
 }

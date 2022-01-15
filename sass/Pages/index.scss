@@ -1,9 +1,16 @@
 @import "../Utils/variables";
 @import "../Utils/mixins";
+@import "../Utils/animations";
 @import "../Base/base";
 @import "../Base/typography";
 @import "../Composants/buttons";
 @import "../Layout/footer";
+
+/* 
+==========================
+        LOADER 
+==========================
+*/
 
 .loader {
     height: 100vh;
@@ -13,49 +20,38 @@
     flex-direction: row;
     position: fixed;
     z-index: 2;
-    animation: loader 3s;
-    animation-delay: 5000ms;
-    animation-fill-mode: both;
+    -webkit-animation: loader 3s;
+            animation: loader 3s;
+    -webkit-animation-delay: 5000ms;
+            animation-delay: 5000ms;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
     transform-origin: bottom;
     div {
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) {
-                animation-delay: 200ms * $i + random(100) * 15ms;
+                -webkit-animation-delay: 200ms * $i + random(100) * 15ms;
+                        animation-delay: 200ms * $i + random(100) * 15ms;
             }
         }
     }
     &__one {
         background-color: $colour-primary;
         width: 20%;
-        animation: bars 1s backwards infinite alternate ease-in-out;
+        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
+                animation: bars 1s backwards infinite alternate ease-in-out;
     }
     &__two {
         background-color: $colour-secondary;
         width: 20%;
-        animation: bars 1s backwards infinite alternate ease-in-out;
+        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
+                animation: bars 1s backwards infinite alternate ease-in-out;
     }
     &__three {
         background-color: $colour-tertiary;
         width: 20%;
-        animation: bars 1s backwards infinite alternate ease-in-out;
-    }
-    @keyframes bars {
-        0% {
-            transform: scaleY(1);
-        }
-        100% {
-            transform: scaleY(0.5);
-        }
-    }
-    @keyframes loader {
-        0% {
-            transform: scaleY(1);
-            opacity: 1;
-        }
-        100% {
-            transform: scaleY(0);
-            opacity: 0;
-        }
+        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
+                animation: bars 1s backwards infinite alternate ease-in-out;
     }
 }
 
@@ -77,7 +73,6 @@ header {
     height: 50px;
     @include flex;
     p {
-        font-size: 16px;
         color: #353535;
         margin: auto;
         text-align: center;
@@ -87,14 +82,15 @@ header {
     }
 }
 #explore {
-    @include flex;
+    @include flex_items;
     flex-direction: column;
     margin: auto;
-    background-color: #f6f6f6;
-    height: 287px;
+    background-color: $colour-bg;
+    height: 100%;
     padding-top: 40px;
     padding-bottom: 60px;
     h2 {
+        font-family: "Roboto", sans-serif;
         text-align: center;
         line-height: 1em;
         padding: 0 50px 0 50px;
@@ -104,27 +100,22 @@ header {
         padding: 0 10px 0 10px;
         margin-bottom: 30px;
     }
-    .btn {
-        margin: auto;
-        cursor: pointer;
-        transition: scale 200ms ease-in-out;
-    }
 }
 
 #fonctionality {
-    height: 440px;
+    height: 100%;
     padding-top: 50px;
     padding-bottom: 70px;
     h2 {
         padding-left: 15px;
+        font-family: "Roboto", sans-serif;
     }
 
     .choose {
-        display: flex;
+        @include flex_items;
         flex-direction: column;
         gap: 20px;
-        justify-content: center;
-        align-items: center;
+
         margin-top: 30px;
         list-style-type: circle;
 
@@ -133,10 +124,11 @@ header {
             flex-direction: row;
             align-items: center;
             font-size: 16px;
-            background-color: #f6f6f6;
-            width: 325px;
+            background-color: $colour-bg;
+            width: 90%;
+            margin: auto;
             border-radius: 20px;
-            box-shadow: 0px 0px 5px #c6c6c6;
+            box-shadow: $box-shadow;
             border: none;
             padding: 20px;
             position: relative;
@@ -167,17 +159,16 @@ header {
     }
 }
 #restaurants {
-    background-color: #f6f6f6;
+    background-color: $colour-bg;
     padding-bottom: 60px;
     h2 {
         padding: 40px 0px 10px 20px;
+        font-family: "Roboto", sans-serif;
     }
     .restaurant__list {
         width: 90%;
-        display: flex;
+        @include flex_items;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin: auto;
         gap: 20px;
         &--link {
@@ -191,20 +182,26 @@ header {
             width: 335px;
             border: none;
             border-radius: 25px;
-            box-shadow: 5px 5px 5px 0px #e2e2e2;
+            box-shadow: $box-shadow;
             display: flex;
             flex-direction: column;
             align-content: space-between;
             background-color: #fff;
             position: relative;
+            @media screen and (min-width: 320px) and (max-width: 374px) {
+                width: 300px;
+            }
             img {
                 width: 100%;
                 height: 175px;
-                object-fit: cover;
-                object-position: center;
+                -o-object-fit: cover;
+                   object-fit: cover;
+                -o-object-position: center;
+                   object-position: center;
                 border-radius: 25px 25px 0 0;
             }
         }
+
         &--legend {
             display: flex;
             flex-direction: row;
@@ -229,36 +226,84 @@ header {
                 .fas {
                     opacity: 0;
                     background: linear-gradient($colour-primary, $colour-secondary);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
                 &:hover {
                     .fas {
                         opacity: 1;
-                        /*transform:scale(1.1);
-                        transform-origin:bottom;*/
-                        animation: scale-up-bottom 0.4s ease-in-out;
-                        animation-fill-mode: both;
+                        -webkit-animation: scale-up-bottom 0.4s ease-in-out;
+                                animation: scale-up-bottom 0.4s ease-in-out;
+                        -webkit-animation-fill-mode: both;
+                                animation-fill-mode: both;
                     }
                     .far {
                         opacity: 0;
                     }
                 }
+            }
+        }
+    }
+}
 
-                @keyframes scale-up-bottom {
-                    0% {
-                        -webkit-transform: scale(0.1);
-                        transform: scale(0.1);
-                        -webkit-transform-origin: 50% 100%;
-                        transform-origin: 50% 100%;
-                    }
-                    100% {
-                        -webkit-transform: scale(1);
-                        transform: scale(1);
-                        -webkit-transform-origin: 50% 100%;
-                        transform-origin: 50% 100%;
-                    }
-                }
+/* 
+===================
+DESKTOP RESPONSIVE
+===================
+*/
+
+@media screen and (min-width: $desktop-min-w) {
+    #explore {
+        height: 100%;
+    }
+
+    #restaurants {
+        .restaurant__list {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin: auto;
+            &--card {
+                width: 450px;
+            }
+        }
+    }
+
+    #fonctionality {
+        height: 100%;
+        .choose {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px auto;
+            list-style-type: circle;
+            width: 90%;
+        }
+    }
+}
+/* 
+===================
+TABLET RESPONSIVE
+===================
+*/
+
+@media screen and (min-width: $tablet-min-w) and (max-width: $tablet-max-w) {
+    #restaurants {
+        .restaurant__list {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            &--card {
+                width: 335px;
             }
         }
     }
