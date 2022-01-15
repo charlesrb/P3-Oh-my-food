@@ -369,7 +369,12 @@ footer ul i {
     RESPONSIVE DESKTOP 
 ==========================
 */
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) {
+  header {
+    max-width: 1200px;
+    margin: auto;
+  }
+
   .img__header {
     -o-object-fit: cover;
     object-fit: cover;

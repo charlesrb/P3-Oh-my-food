@@ -176,7 +176,11 @@
 ==========================
 */
 
-@media screen and (min-width: $desktop-min-w) and (max-width: $desktop-max-w) {
+@media screen and (min-width: $desktop-min-w) {
+    header {
+        max-width:1200px;
+        margin:auto;
+    }
     .img__header {
         -o-object-fit: cover;
            object-fit: cover;
