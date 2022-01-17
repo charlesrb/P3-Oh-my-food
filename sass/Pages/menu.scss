@@ -24,7 +24,7 @@
 
 .img__header {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -50,9 +50,9 @@
             .fas {
                 opacity: 1;
                 -webkit-animation: scale-up-bottom 0.4s ease-in-out;
-                        animation: scale-up-bottom 0.4s ease-in-out;
+                animation: scale-up-bottom 0.4s ease-in-out;
                 -webkit-animation-fill-mode: both;
-                        animation-fill-mode: both;
+                animation-fill-mode: both;
             }
             .far {
                 opacity: 0;
@@ -68,13 +68,13 @@
 
     a {
         -webkit-animation: ease-in-out appear 1s;
-                animation: ease-in-out appear 1s;
+        animation: ease-in-out appear 1s;
         -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
+        animation-fill-mode: both;
         @for $i from 2 through 5 {
             &:nth-child(#{$i}) {
                 -webkit-animation-delay: 500ms * calc($i / 2);
-                        animation-delay: 500ms * calc($i / 2);
+                animation-delay: 500ms * calc($i / 2);
             }
         }
     }
@@ -110,26 +110,19 @@
 
 .details {
     display: flex;
-    flex-direction: row;
-    background: #fff;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #fff;
     border-radius: 15px;
-    box-shadow: $box-shadow;
-    transition: translate 500ms ease-in-out;
-    overflow: hidden;
-    margin: auto;
+    box-shadow: 0px 5px 10px 0px gainsboro;
+    height: 70px;
+    @include overflow;
     &__description {
         display: flex;
         flex-direction: column;
         padding: 10px;
-
         p {
             font-size: 14px;
-            @include overflow;
-            width: 200px;
-        }
-        h4 {
-            @include overflow;
-            width: 210px;
         }
     }
     &__price {
@@ -144,22 +137,21 @@
         background: $colour-tertiary;
         color: white;
         font-size: 20px;
-        width: 70px;
+        width: 0px;
         border-radius: 0 15px 15px 0;
-        margin-right: -75px;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: width 1s;
     }
     &:hover {
         .details__check {
-            margin-right: 0;
             width: 70px;
         }
 
         .fas {
             -webkit-animation: rotate-center 0.6s ease-in-out both;
-                    animation: rotate-center 0.6s ease-in-out both;
+            animation: rotate-center 0.6s ease-in-out both;
         }
     }
 }
@@ -178,12 +170,12 @@
 
 @media screen and (min-width: $desktop-min-w) {
     header {
-        max-width:1200px;
-        margin:auto;
+        max-width: 1200px;
+        margin: auto;
     }
     .img__header {
         -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
         width: 100%;
         height: 300px;
     }

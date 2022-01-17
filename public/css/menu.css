@@ -302,13 +302,15 @@ footer ul i {
 
 .details {
   display: flex;
-  flex-direction: row;
-  background: #fff;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0px 0px 5px #c6c6c6;
-  transition: translate 500ms ease-in-out;
+  box-shadow: 0px 5px 10px 0px gainsboro;
+  height: 70px;
+  white-space: nowrap;
   overflow: hidden;
-  margin: auto;
+  text-overflow: ellipsis;
 }
 .details__description {
   display: flex;
@@ -317,16 +319,6 @@ footer ul i {
 }
 .details__description p {
   font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 200px;
-}
-.details__description h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 210px;
 }
 .details__price {
   display: flex;
@@ -340,15 +332,14 @@ footer ul i {
   background: #99e2d0;
   color: white;
   font-size: 20px;
-  width: 70px;
+  width: 0px;
   border-radius: 0 15px 15px 0;
-  margin-right: -75px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: width 1s;
 }
 .details:hover .details__check {
-  margin-right: 0;
   width: 70px;
 }
 .details:hover .fas {
