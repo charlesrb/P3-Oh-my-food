@@ -36,7 +36,8 @@
         border-radius: 50%;
         border: 7px solid transparent;
         border-top-color: $colour-primary;
-        animation: spin 2s linear infinite;
+        -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
 
         &::before {
             content: "";
@@ -48,7 +49,8 @@
             bottom: 10px;
             left: 10px;
             border-top-color: $colour-secondary;
-            animation: spin 3s linear infinite;
+            -webkit-animation: spin 3s linear infinite;
+                    animation: spin 3s linear infinite;
         }
         &::after {
             content: "";
@@ -60,7 +62,8 @@
             bottom: 25px;
             left: 25px;
             border-top-color: $colour-tertiary;
-            animation: spin 1.5s linear infinite;
+            -webkit-animation: spin 1.5s linear infinite;
+                    animation: spin 1.5s linear infinite;
         }
     }
 }
@@ -280,6 +283,9 @@ DESKTOP RESPONSIVE
             margin: auto;
             &--card {
                 width: 500px;
+                @media screen and (min-width:1700px)  {
+                    width:700px;
+                }
             }
         }
     }
