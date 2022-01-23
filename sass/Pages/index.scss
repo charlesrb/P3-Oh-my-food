@@ -15,43 +15,53 @@
 .loader {
     height: 100vh;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 2;
     -webkit-animation: loader 3s;
-            animation: loader 3s;
+    animation: loader 3s;
     -webkit-animation-delay: 3000ms;
-            animation-delay: 3000ms;
+    animation-delay: 3000ms;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    transform-origin: bottom;
-    div {
-        @for $i from 1 through 5 {
-            &:nth-child(#{$i}) {
-                -webkit-animation-delay: 200ms * $i + random(100) * 15ms;
-                        animation-delay: 200ms * $i + random(100) * 15ms;
-            }
+    animation-fill-mode: both;
+
+    &__circle {
+        display: block;
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 7px solid transparent;
+        border-top-color: $colour-primary;
+        animation: spin 2s linear infinite;
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 7px solid transparent;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            border-top-color: $colour-secondary;
+            animation: spin 3s linear infinite;
         }
-    }
-    &__one {
-        background-color: $colour-primary;
-        width: 20%;
-        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-                animation: bars 1s backwards infinite alternate ease-in-out;
-    }
-    &__two {
-        background-color: $colour-secondary;
-        width: 20%;
-        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-                animation: bars 1s backwards infinite alternate ease-in-out;
-    }
-    &__three {
-        background-color: $colour-tertiary;
-        width: 20%;
-        -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-                animation: bars 1s backwards infinite alternate ease-in-out;
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 7px solid transparent;
+            top: 25px;
+            right: 25px;
+            bottom: 25px;
+            left: 25px;
+            border-top-color: $colour-tertiary;
+            animation: spin 1.5s linear infinite;
+        }
     }
 }
 
@@ -195,9 +205,9 @@ header {
                 width: 100%;
                 height: 175px;
                 -o-object-fit: cover;
-                   object-fit: cover;
+                object-fit: cover;
                 -o-object-position: center;
-                   object-position: center;
+                object-position: center;
                 border-radius: 25px 25px 0 0;
             }
         }
@@ -234,9 +244,9 @@ header {
                     .fas {
                         opacity: 1;
                         -webkit-animation: scale-up-bottom 0.4s ease-in-out;
-                                animation: scale-up-bottom 0.4s ease-in-out;
+                        animation: scale-up-bottom 0.4s ease-in-out;
                         -webkit-animation-fill-mode: both;
-                                animation-fill-mode: both;
+                        animation-fill-mode: both;
                     }
                     .far {
                         opacity: 0;
@@ -260,7 +270,7 @@ DESKTOP RESPONSIVE
 
     #restaurants {
         .restaurant__list {
-            margin-top:30px;
+            margin-top: 30px;
             width: 90%;
             display: flex;
             flex-direction: row;
@@ -312,6 +322,6 @@ TABLET RESPONSIVE
 
 @media screen and (min-width: $desktop-min-w) {
     footer {
-        text-align:center;
+        text-align: center;
     }
 }

@@ -4,21 +4,20 @@
 ===================
 */
 
-@keyframes bars {
+@keyframes spin {
     0% {
-        transform: scaleY(1);
+        transform:rotate(0deg);
     }
     100% {
-        transform: scaleY(0.5);
+        transform:rotate(360deg);
     }
+    
 }
 @keyframes loader {
     0% {
-        transform: scaleY(1);
         opacity: 1;
     }
     100% {
-        transform: scaleY(0);
         opacity: 0;
     }
 }

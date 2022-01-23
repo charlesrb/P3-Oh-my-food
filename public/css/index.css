@@ -18,21 +18,19 @@
      LOADER
 ===================
 */
-@keyframes bars {
+@keyframes spin {
   0% {
-    transform: scaleY(1);
+    transform: rotate(0deg);
   }
   100% {
-    transform: scaleY(0.5);
+    transform: rotate(360deg);
   }
 }
 @keyframes loader {
   0% {
-    transform: scaleY(1);
     opacity: 1;
   }
   100% {
-    transform: scaleY(0);
     opacity: 0;
   }
 }
@@ -197,9 +195,10 @@ footer ul i {
 .loader {
   height: 100vh;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 2;
   -webkit-animation: loader 3s;
@@ -208,45 +207,40 @@ footer ul i {
   animation-delay: 3000ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  transform-origin: bottom;
 }
-.loader div:nth-child(1) {
-  -webkit-animation-delay: 1010ms;
-  animation-delay: 260ms;
+.loader__circle {
+  display: block;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top-color: #9356dc;
+  animation: spin 2s linear infinite;
 }
-.loader div:nth-child(2) {
-  -webkit-animation-delay: 565ms;
-  animation-delay: 1495ms;
+.loader__circle::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border-top-color: #ff79da;
+  animation: spin 3s linear infinite;
 }
-.loader div:nth-child(3) {
-  -webkit-animation-delay: 1170ms;
-  animation-delay: 1110ms;
-}
-.loader div:nth-child(4) {
-  -webkit-animation-delay: 2195ms;
-  animation-delay: 1130ms;
-}
-.loader div:nth-child(5) {
-  -webkit-animation-delay: 1180ms;
-  animation-delay: 1345ms;
-}
-.loader__one {
-  background-color: #9356dc;
-  width: 20%;
-  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-  animation: bars 1s backwards infinite alternate ease-in-out;
-}
-.loader__two {
-  background-color: #ff79da;
-  width: 20%;
-  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-  animation: bars 1s backwards infinite alternate ease-in-out;
-}
-.loader__three {
-  background-color: #99e2d0;
-  width: 20%;
-  -webkit-animation: bars 1s backwards infinite alternate ease-in-out;
-  animation: bars 1s backwards infinite alternate ease-in-out;
+.loader__circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  top: 25px;
+  right: 25px;
+  bottom: 25px;
+  left: 25px;
+  border-top-color: #99e2d0;
+  animation: spin 1.5s linear infinite;
 }
 
 header {
