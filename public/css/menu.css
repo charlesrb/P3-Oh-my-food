@@ -316,9 +316,17 @@ footer ul i {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 500ms ease-out;
+  width: 100%;
 }
-.details__description p {
-  font-size: 14px;
+.details__description p,
+.details__description h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .details__price {
   display: flex;
@@ -338,6 +346,9 @@ footer ul i {
   justify-content: center;
   align-items: center;
   transition: width 1s;
+}
+.details:hover .details__description {
+  width: calc(100% - 70px);
 }
 .details:hover .details__check {
   width: 70px;
@@ -383,6 +394,17 @@ footer ul i {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  .list-menu {
+    width: 350px;
+    min-width: 300px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  footer {
+    text-align: center;
   }
 }
 

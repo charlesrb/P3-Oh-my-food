@@ -121,8 +121,12 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
-        p {
-            font-size: 14px;
+        @include overflow;
+        transition: all 500ms ease-out;
+        width: 100%;
+        p,
+        h4 {
+            @include overflow;
         }
     }
     &__price {
@@ -145,6 +149,10 @@
         transition: width 1s;
     }
     &:hover {
+        .details__description {
+            width: calc(100% - 70px);
+        }
+
         .details__check {
             width: 70px;
         }
@@ -188,5 +196,14 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+    .list-menu {
+        width: 350px;
+        min-width: 300px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    footer {
+        text-align: center;
     }
 }

@@ -22,8 +22,8 @@
     z-index: 2;
     -webkit-animation: loader 3s;
             animation: loader 3s;
-    -webkit-animation-delay: 5000ms;
-            animation-delay: 5000ms;
+    -webkit-animation-delay: 3000ms;
+            animation-delay: 3000ms;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     transform-origin: bottom;
@@ -260,6 +260,7 @@ DESKTOP RESPONSIVE
 
     #restaurants {
         .restaurant__list {
+            margin-top:30px;
             width: 90%;
             display: flex;
             flex-direction: row;
@@ -268,7 +269,7 @@ DESKTOP RESPONSIVE
             align-items: center;
             margin: auto;
             &--card {
-                width: 450px;
+                width: 500px;
             }
         }
     }
@@ -306,5 +307,11 @@ TABLET RESPONSIVE
                 width: 335px;
             }
         }
+    }
+}
+
+@media screen and (min-width: $desktop-min-w) {
+    footer {
+        text-align:center;
     }
 }

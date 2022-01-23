@@ -18,30 +18,12 @@
      LOADER
 ===================
 */
-@-webkit-keyframes bars {
-  0% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(0.5);
-  }
-}
 @keyframes bars {
   0% {
     transform: scaleY(1);
   }
   100% {
     transform: scaleY(0.5);
-  }
-}
-@-webkit-keyframes loader {
-  0% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(0);
-    opacity: 0;
   }
 }
 @keyframes loader {
@@ -59,23 +41,17 @@
     HEART APPEAR
 ===================
 */
-@-webkit-keyframes scale-up-bottom {
-  0% {
-    transform: scale(0.1);
-    transform-origin: 50% 100%;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: 50% 100%;
-  }
-}
 @keyframes scale-up-bottom {
   0% {
+    -webkit-transform: scale(0.1);
     transform: scale(0.1);
+    -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
   }
   100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
   }
 }
@@ -84,19 +60,13 @@
     BUTTON CHECK
 ===================
 */
-@-webkit-keyframes rotate-center {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes rotate-center {
   0% {
+    -webkit-transform: rotate(0);
     transform: rotate(0);
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -105,22 +75,14 @@
     MENU APPEAR
 ===================
 */
-@-webkit-keyframes appear {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 @keyframes appear {
   0% {
+    -webkit-transform: translateY(50px);
     transform: translateY(50px);
     opacity: 0;
   }
   100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
@@ -242,31 +204,31 @@ footer ul i {
   z-index: 2;
   -webkit-animation: loader 3s;
   animation: loader 3s;
-  -webkit-animation-delay: 5000ms;
-  animation-delay: 5000ms;
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   transform-origin: bottom;
 }
 .loader div:nth-child(1) {
-  -webkit-animation-delay: 1430ms;
-  animation-delay: 290ms;
+  -webkit-animation-delay: 1010ms;
+  animation-delay: 260ms;
 }
 .loader div:nth-child(2) {
-  -webkit-animation-delay: 880ms;
-  animation-delay: 1555ms;
+  -webkit-animation-delay: 565ms;
+  animation-delay: 1495ms;
 }
 .loader div:nth-child(3) {
-  -webkit-animation-delay: 1905ms;
-  animation-delay: 1455ms;
+  -webkit-animation-delay: 1170ms;
+  animation-delay: 1110ms;
 }
 .loader div:nth-child(4) {
-  -webkit-animation-delay: 1970ms;
-  animation-delay: 1670ms;
+  -webkit-animation-delay: 2195ms;
+  animation-delay: 1130ms;
 }
 .loader div:nth-child(5) {
-  -webkit-animation-delay: 2470ms;
-  animation-delay: 1555ms;
+  -webkit-animation-delay: 1180ms;
+  animation-delay: 1345ms;
 }
 .loader__one {
   background-color: #9356dc;
@@ -501,6 +463,7 @@ DESKTOP RESPONSIVE
   }
 
   #restaurants .restaurant__list {
+    margin-top: 30px;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -510,7 +473,7 @@ DESKTOP RESPONSIVE
     margin: auto;
   }
   #restaurants .restaurant__list--card {
-    width: 450px;
+    width: 500px;
   }
 
   #fonctionality {
@@ -545,3 +508,10 @@ TABLET RESPONSIVE
     width: 335px;
   }
 }
+@media screen and (min-width: 1024px) {
+  footer {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
