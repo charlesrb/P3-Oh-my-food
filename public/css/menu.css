@@ -320,7 +320,7 @@ footer ul i {
 }
 #page h3 {
   text-transform: uppercase;
-  margin: 20px;
+  margin: 20px 0px 20px 0px;
   position: relative;
 }
 #page h3::after {
